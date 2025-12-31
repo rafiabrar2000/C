@@ -1,0 +1,136 @@
+#include <stdio.h>
+
+void main() {
+	char ch1;
+	int  temperatures[100] = { 0 }, n = 0, key = 0;
+
+	printf("\n\n");
+
+	printf("======= BD Meteorological System =========");
+
+	printf("\n\n * Enter r  to take temperatures of all cities.");
+
+
+	printf("\n\n * Enter s  to search a temperature.");
+
+	printf("\n\n * Enter t  to display all the temperatures in reverse index order.");
+
+	printf("\n\n * Enter q  to quit / exit the menu system.\n\n");
+	printf("Enter your choice:  \n");
+
+	scanf_s(" %c", &ch1); getchar();
+	printf("\n");
+
+	while (1)
+	{
+		
+	if(ch1=='q')
+	{
+		printf("\nThank you for using BD Meteorological System\nSaadi");
+
+		break;
+	}
+
+	switch (ch1)
+	{
+
+	case 'r' :
+
+		printf("How many cities temperatures do you want to enter?\n ");
+
+		scanf_s("%d", &n);
+		printf("Enter the all temperatures here : \n");
+
+		for (int i = 0; i <= n-1; ++i) {
+			scanf_s("\n\n%d", &temperatures[i]);
+		}
+
+		
+		break;
+
+  case 't':
+
+	  if (n > 0) {
+
+
+
+		  for (int i = n - 1; i >= 0; --i) {
+
+
+			  printf("\n%d\n", temperatures[i]);
+		  }
+	  }
+	  else
+	  {
+		  printf("\nNo temperature information is found.Please populate your temperature information first");
+
+	  }
+		break;
+
+
+	case 's':
+
+
+		printf("Search for a temperature : ");
+		scanf_s("%d", &key);
+
+		for (int i = 0; i < n; i++)
+		{
+			if (temperatures[i] == key)
+
+			{
+				printf("\nFound: A[%d] = %d", i, temperatures[i]);
+
+				break;
+			}
+			if (key != temperatures[i] && i==n-1) {
+				printf("\nNot  found");
+				break;
+
+				
+		}
+
+			
+
+		}
+
+		if (n == 0) {
+			printf("\nNo temperature information is found.Please populate your temperature information first");
+		}
+
+		break;
+	
+
+	default:
+
+		printf("Invalid Input");
+
+		break;
+	}
+	
+	
+	printf("\n\n");
+
+	printf("======= BD Meteorological System =========");
+
+	printf("\n\n * Enter r  to take temperatures of all cities.");
+
+
+	printf("\n\n * Enter s  to search a temperature.");
+
+	printf("\n\n * Enter t  to display all the temperatures in reverse index order.");
+
+	printf("\n\n * Enter q  to quit / exit the menu system.\n\n");
+	printf("Enter your choice:  \n");
+
+	scanf_s(" %c", &ch1); getchar();
+	printf("\n");
+		
+
+
+
+}
+	
+
+
+}
