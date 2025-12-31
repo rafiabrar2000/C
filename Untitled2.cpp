@@ -1,29 +1,60 @@
 #include<stdio.h>
 
-int noOfDigits(int n1);
 int main()
+
 {
-  int n1,ctr;
-    printf("\n\n count the digits of a given number :\n");
-	printf("-----------------------------------------\n");
-    printf(" Input  a number : ");
-    scanf("%d",&n1);
+	/*int a,b,c;
+	scanf("%d %d %d",&a,&b,&c);
+	if((a+b)<=80)
+	{
+		printf("a) 1");
+	}
+	else
+	{
+		printf("a) 0");
+	}
 
-    ctr = noOfDigits(n1);
+	if(!(a+b))
+	{
+		printf("b) 1");
+	}
+	else
+	{
+		printf("b) 0");
+	}
 
-    printf(" The number of digits in the number is :  %d \n\n",ctr);
-    return 0;
-}
+	if(c!=0)
+	{
+		printf("c) 1");
+	}
+	else
+	{
+		printf("c) 0");
+	}*/
+	int i,number,n,position,array[11];
+	scanf("%d",&n);
+	for(i=0;i<n;i++)
+	{
+		scanf("%d",&array[i]);
+	}
+	printf("Number:");
+	scanf("%d\n",&number);
+	printf("Position:");
+	scanf("%d",&position);
 
-int noOfDigits(int n1)
-{
-    static int ctr=0;
+	for(i=n-1;i>=position;i--)
+	{
+	    array[i+1]=array[i];
+	}
 
-     if(n1!=0)
-     {
-          ctr++;
-         noOfDigits(n1/10);
-    }
 
-    return ctr;
+
+	array[position]=number;
+
+	for(i=0;i<n;i++)
+	{
+		printf("%d ",array[i]);
+	}
+	return 0;
+
 }

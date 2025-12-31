@@ -1,35 +1,43 @@
-/*#include<stdio.h>
+#include<stdio.h>
 
-void fibo(int f0,int f1,int n)
-
+struct student
 {
+    int marks[50][50];
+};
 
-
-
-    int f;
-
-    if(n>0)
-    {
-        printf("%d ",f0);
-        f=f0+f1;
-        f0=f1;
-        f1=f;
-
-        n--;
-        fibo(f0,f1,n);
-
-    }
-
-}
 
 int main()
 {
-   int f0=0,f1=1;
-   int n;
-   scanf("%d",&n);
+    struct student s[50];
+    int n;
+    fflush(stdin);
+    scanf("%d",&n);
+    int i;
+    for(i=0;i<n;i++)
+    {
+        for(int j=0;j<2;j++)
+        {
+            for(int k=0;k<2;k++)
+            {
+                printf("\ni = %d, j= %d ,k = %d \n",i,j,k);
+                //fflush(stdin);
+                scanf("%d",&s[i].marks[j][k]);
+            }
+        }
 
-   fibo(f0,f1,n);
-}*/
+    }
+    for(i=0;i<n;i++)
+    {
+        for(int j=0;j<2;j++)
+        {
+            for(int k=0;k<2;k++)
+            {
+                fflush(stdout);
+                printf("%d ",s[i].marks[j][k]);
+            }
+            printf("\n");
+        }
+    }
 
-
-
+    return 0;
+}
